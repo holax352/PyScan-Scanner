@@ -55,9 +55,10 @@ def SQLinjection(lien):
     lien_opener_blind = urlopen(blindlink).read()
     if match in source:
         print(bcolors.OKGREEN+"[OK] "+bcolors.ENDC+"Error SQL found (string)")
-        insertvuln(website, lien, "SQLinjection", source)
+        insertvuln(website, lien, "SQLinjection::(String)", source)
     elif lien_opener_blind != source:
         print(bcolors.OKGREEN+"[OK] "+bcolors.ENDC+"Possible injection (blind)")
+        insertvuln(website, lien, "SQLinjection::(Blind)", source)
     else:
         print(bcolors.WARNING+"[NOP] "+bcolors.ENDC+"No SQL possible error found .")
 
@@ -79,14 +80,33 @@ def scraper(page):
     elif "https://" in url:
         scanner(url)
     elif "/" in url[:1]:
+        print(url)
+        sys.exit()
         if ".com" in website[:4]:
             url = website+url
             scanner(url)
+            print(url)
+            sys.exit()
         split = website.split(".com", 1)
         url = split[0]+".com"+split[1]
         scanner(url)
     else:
-        url = website+"/"+url
+        if ".com" in website:
+            if ".com" in website[:4]:
+                url = website+"/"+url
+            elif ".com" not in website[:4]:
+                split = website.split(".com",1)
+                if "/" not in url[:1]:
+                    url = split[0]+".com/"+url
+                elif "/" in url[:1]:
+                    url = split[0]+".com"+url
+        elif ".org" in website:
+            if ".org" not in website[:4]:
+                split = website.split(".org",1)
+                if "/" not in url[:1]:
+                    url = split[0]+".org/"+url
+                elif "/" in url[:1]:
+                    url = split[0]+".org"+url
         scanner(url)
     result = checking(url)
     if result == "ok":
@@ -99,14 +119,18 @@ def main():
     global website
     if len(sys.argv) > 2:
         website = sys.argv[2]
-        response = requests.get(website)
-        page = str(BeautifulSoup(response.content, "html.parser"))
-        while True:
-            url, n = scraper(page)
-            page = page[n:]
-            if url:
-                if url != website:
-                    print url
-            else:
-                break
+        if "-s" in sys.argv:
+            scanner(website)
+            sendurl(website)
+        else:
+            response = requests.get(website)
+            page = str(BeautifulSoup(response.content, "html.parser"))
+            while True:
+                url, n = scraper(page)
+                page = page[n:]
+                if url:
+                    if url != website:
+                        print url
+                else:
+                    break
 main()
