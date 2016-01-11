@@ -47,8 +47,8 @@ li a
 .firstinfo
 {
     background-color: white;
-    height: 150px;
-    width: 700px;
+    min-height: 150px;
+    width: 850px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -74,6 +74,32 @@ li a
     margin-bottom: 10px;
 }
 
+.import
+{
+    text-align: center;
+}
+
+.search
+{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 35px;
+    padding-top: 15px;
+    width: 250px;
+    border: 1px solid #9C9898;
+    box-shadow: 1px 1px 1px grey;
+    margin-bottom: 10px;
+}
+
+.titre
+{
+    text-align: center;
+    font-size: 1.5em;
+    color: black;
+}
+
 .alert
 {
     background-color: rgba(0, 255, 20, 0.48);
@@ -83,4 +109,17 @@ li a
     padding-top: 5px;
     border: 1px solid black;
     margin-bottom: 10px;
+}
+
+table {
+    font-size: 12px;
+    width:100%;
+}
+table, th, td {
+    border-bottom:1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
 }

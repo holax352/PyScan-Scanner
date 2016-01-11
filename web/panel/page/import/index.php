@@ -9,7 +9,11 @@ require('config/config.php');
     </div>
     <div class="body">
         <div class="firstinfo">
-            <h1 class="titre">Welcome to Pyscan</h1>
+        <h1 class="titre"> Import log file <small>( .pyscan )</small></h1>
+            <form action="index.php" method="post" class="import">
+                <input type="file" name="file" />
+                <input type="submit" name="import" value="import file" />
+            </form>
         </div>
     </div>
 </div>
