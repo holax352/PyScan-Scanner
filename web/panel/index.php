@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Pyscan</title>
+        <link rel="icon" type="image/png" href="images/pyscan.png" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles.css" />
     </head>
