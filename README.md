@@ -14,7 +14,9 @@ gate_payload = "panel/api/payload.php"
 gate_database = "panel/api/database.php"
 ```
 ## Upload the .SQL
-
+```shell
+mysql -u root -p < file.sql
+```
 ## Login 
 ![Pyscan login](http://s7.postimg.org/a7r15d2az/login2.png)
 ```shell
