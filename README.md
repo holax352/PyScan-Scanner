@@ -1,4 +1,9 @@
 ![Pyscan](http://s28.postimg.org/usbam0pe5/pyscan.png)
+## REQUIRE
+* urllib2
+* BeautifulSoup
+* requests
+
 ## START
 * Change database information
 ```php
