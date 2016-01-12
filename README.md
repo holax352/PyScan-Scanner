@@ -16,7 +16,7 @@ gate_database = "panel/api/database.php"
 ## Upload the .SQL
 
 ## Login 
-![Pyscan login](http://s29.postimg.org/7ro3w9bt3/login.png)
+![Pyscan login](http://s28.postimg.org/ed4i6z159/login1.png)
 ```shell
 Username: root
 password: toor
