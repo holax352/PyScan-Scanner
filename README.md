@@ -24,11 +24,11 @@ password: toor
 
 ## Make payload !
 ![Pyscan payload](http://s22.postimg.org/6wklvc00x/payload.png)
-## Test payload 
+## Test payload
 ```shell
-python pyscan.py -u "http://exemple.com/id=2" -s -p [PAYLOAD_ID]
+python pyscan.py -u "http://exemple.com/id=2" -s -p PAYLOAD_ID
 ```
-## Test all payload 
+## Test all payload
 ```shell
 python pyscan.py -u "http://exemple.com/id=2" -s --all
 ```
