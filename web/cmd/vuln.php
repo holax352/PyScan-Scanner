@@ -3,7 +3,9 @@ require_once('../panel/config/config.php');
 if(isset($_GET['url']) && $_GET['url'] != NULL)
 {
     $date = date('d-m-Y');
-    $domain = $_GET['d'];
+    $domain = "database";
+    if(isset($_GET['d']) && $_GET['d'] != NULL)
+        $domain = $_GET['d'];
     $url = $_GET['url'];
     $type = $_GET['t'];
     $source = $_GET['s'];

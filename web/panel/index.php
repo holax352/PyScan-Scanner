@@ -3,8 +3,10 @@
 <html>
     <head>
         <title>Pyscan</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="styles.css" />
     </head>
+    <div class="logo"><p class="titrelogo">PyScan scanner</p></div>
 <?php
 if(!isset($_SESSION['login']) || $_SESSION['login'] == '')
     require_once('page/login/index.php');

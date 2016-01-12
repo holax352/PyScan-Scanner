@@ -27,8 +27,10 @@
             echo "<div class='alertred'>Field empty .</div>";
     }
     ?>
+<div class="login">
     <form action="#" method="post">
-        <input type="text" name="username" placeholder="login" />
-        <input type="password" name="password" placeholder="password" />
-        <input type="submit" name="login" value="login" />
+        <input class="logininput" type="text" name="username" placeholder="login" />
+        <input class="logininput" type="password" name="password" placeholder="password" />
+        <input class="loginsubmit" type="submit" name="login" value="login" />
     </form>
+</div>
